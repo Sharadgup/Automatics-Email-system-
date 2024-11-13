@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Automation Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Email Automation Tool</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="pdfFile">Select PDF with Emails:</label>
+            <input type="file" id="pdfFile" name="pdfFile" accept="application/pdf" required><br><br>
+            
+            <label for="templateFile">Select Email Template PDF:</label>
+            <input type="file" id="templateFile" name="templateFile" accept="application/pdf" required><br><br>
+            
+            <button type="button" onclick="sendEmails()">Send Emails</button>
+        </form>
+        <div id="status"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
